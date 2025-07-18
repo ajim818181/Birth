@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Final Wish</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .wish-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid #ff69b4;
+      border-radius: 20px;
+      padding: 25px;
+      max-width: 700px;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+      animation: fadeIn 2s ease-out;
+    }
+
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      color: #ffb6c1;
+    }
+
+    p {
+      font-size: 1em;
+      line-height: 1.5em;
+      color: #f8f8f8;
+    }
+
+    .hearts {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hearts span {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background: #ff69b4;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.7;
+      border-radius: 50%;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wish-box">
+    <h1>My Final Wish for You 💖</h1>
+    <p>
+      Once again, <strong>Happy Birthday, sayang</strong>.<br>
+      Even though I can't be there to celebrate your birthday with you this year,<br>
+      I’ll do my best to make sure I can celebrate it with you next year.<br><br>
+
+      I hope you’ll never get tired of me or bored of being with me.<br>
+      You’re always in my prayers.<br><br>
+
+      And as for your gift — I’m really sorry I couldn’t get it to you on time.<br>
+      If I could, I’d give you everything you’ve ever wanted.<br>
+      But we’re both still students, so for now, my promise is this:<br>
+      I will give my very best to become the man you dream of,<br>
+      and I’ll work hard to fulfill all your wishes.<br><br>
+
+      <strong>Last but not least</strong>, don’t forget me, Ajim —<br>
+      Even if one day, we’re no longer together,<br>
+      I want you to know: <strong>you are the best woman I’ve ever known</strong>.<br>
+      Everything about you just makes me love you more and more.<br><br>
+
+      From the bottom of my heart,<br>
+      <strong>Enjoy your special day, my love.</strong> 💖<br><br>
+
+      — <em>Forever yours, Ajim 💗</em>
+    </p>
+  </div>
+
+  <div class="hearts">
+    <span style="left: 10%; animation-delay: 0s;"></span>
+    <span style="left: 25%; animation-delay: 1s;"></span>
+    <span style="left: 40%; animation-delay: 2s;"></span>
+    <span style="left: 60%; animation-delay: 3s;"></span>
+    <span style="left: 75%; animation-delay: 4s;"></span>
+    <span style="left: 90%; animation-delay: 5s;"></span>
+  </div>
+
+</body>
+</html>

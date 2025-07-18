@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #ffffff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .message-box {
+      background: rgba(255, 255, 255, 0.07);
+      padding: 40px 50px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 700px;
+      box-shadow: 0 0 20px rgba(255, 182, 193, 0.5);
+      animation: fadeIn 2s ease-out;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5em;
+      color: #ffb6c1;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      color: #f0f0f0;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 12px 24px;
+      font-size: 1.1em;
+      background: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff69b4;
+      transition: all 0.3s;
+    }
+
+    button:hover {
+      background: #ff1493;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Floating sparkles background */
+    .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: pink;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #ffb6c1;
+      animation: sparkle 10s linear infinite;
+    }
+
+    @keyframes sparkle {
+      0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="message-box">
+    <h1>Happy Birthday, Sayang 💖</h1>
+    <p>
+      Today is your day — to the most beautiful, radiant, and adorable woman I've ever known.  
+      Your presence adds so much color and joy to my life, even from a distance.  
+      Despite the space between us, your effort and commitment to stay by my side means the world to me.
+      <br><br>
+      <strong>Happy 22nd Birthday</strong>, my love.  
+      I hope this year becomes your best one yet, and I hope we stay together — all the way to the altar someday. 🥰  
+      <br><br>
+      I love you so much, sayang.  
+      <br><br>
+      — Ajim 💗
+    </p>
+    <button onclick="location.href='gallery.html'">📸 See Our Memories</button>
+  </div>
+
+  <!-- Floating sparkles -->
+  <script>
+    for (let i = 0; i < 50; i++) {
+      const sparkle = document.createElement("div");
+      sparkle.className = "sparkle";
+      sparkle.style.left = Math.random() * 100 + "vw";
+      sparkle.style.top = Math.random() * 100 + "vh";
+      sparkle.style.animationDelay = Math.random() * 5 + "s";
+      sparkle.style.background = ["#ffb6c1", "#ffc0cb", "#fff0f5"][Math.floor(Math.random() * 3)];
+      document.body.appendChild(sparkle);
+    }
+  </script>
+
+</body>
+</html>

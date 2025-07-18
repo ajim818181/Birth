@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Birthday Countdown</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #1e1e1e, #2c2c2c);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #ff69b4;
+      margin-bottom: 20px;
+    }
+
+    #countdown {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    #goBtn {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 30px;
+      opacity: 0.6;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    #goBtn:enabled {
+      opacity: 1;
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
+    /* Floating hearts */
+    .hearts span {
+      position: absolute;
+      bottom: 0;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      opacity: 0.7;
+      animation: floatUp 6s infinite ease-in;
+      border-radius: 50% 50% 0 0;
+      transform: rotate(45deg);
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1) rotate(45deg);
+        opacity: 0.7;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.2) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    /* Sticker image */
+    .sticker {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 150px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+      border: 3px solid white;
+      transform: rotate(-3deg);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Countdown to Your Special Day 🎂</h1>
+  <div id="countdown">Loading...</div>
+
+  <button id="goBtn" onclick="location.href='birthday.html'" disabled>
+    Almost there, sayang...
+  </button>
+
+  <!-- Floating hearts for extra mood -->
+  <div class="hearts">
+    <span style="left: 10%; animation-delay: 0s;"></span>
+    <span style="left: 25%; animation-delay: 1s;"></span>
+    <span style="left: 40%; animation-delay: 2s;"></span>
+    <span style="left: 60%; animation-delay: 3s;"></span>
+    <span style="left: 75%; animation-delay: 4s;"></span>
+    <span style="left: 90%; animation-delay: 5s;"></span>
+  </div>
+
+  <!-- Sticker image -->
+  <img src="6327565525680508672.jpg" alt="Cute Sticker" class="sticker">
+
+  <script>
+    const countdown = document.getElementById('countdown');
+    const button = document.getElementById('goBtn');
+    const birthdayDate = new Date("2025-07-19T00:00:00").getTime();
+
+    const x = setInterval(function () {
+      const now = new Date().getTime();
+      const distance = birthdayDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      if (distance <= 0) {
+        clearInterval(x);
+        countdown.innerHTML = "🎉 It's time! 🎉";
+        button.disabled = false;
+        button.innerText = "Go to Birthday Page 🎉";
+      } else {
+        countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      }
+    }, 1000);
+  </script>
+
+</body>
+</html>
